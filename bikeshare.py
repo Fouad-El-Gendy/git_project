@@ -25,7 +25,7 @@ def get_filters():
         else:
             break
 
-    # get user input for month (all, january, february, ... , june)
+    # get user input for month (all the months, january, february, ... , june)
     while True:
         month = input('\nWhich city would you like to filter by? January, February, March, April, May, June or type "all" if you do not to filter by a specific month?\n').title()
         if month not in ('January', 'February', 'March', 'April', 'May', 'June','All'):
@@ -33,7 +33,7 @@ def get_filters():
         else:
             break
 
-    # get user input for day of week (all, monday, tuesday, ... sunday)
+    # get user input for day of week (all the days, monday, tuesday,... sunday)
     while True:
         day = input('\nWhich day of week would you like to filter by? Saturday, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday or type "all" if you do not to filter by a specific day?\n').title()
         if day not in ('Saturday','Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'All'):
@@ -63,7 +63,7 @@ def load_data(city, month, day):
     # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
-    # extract month and day of week from Start Time to create new columns
+    # extract month and day of the week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.strftime("%A")
     #df['day_of_week'] = df['Start Time'].dt.weekday_name
@@ -74,7 +74,7 @@ def load_data(city, month, day):
         # use the index of the months list to get the corresponding int
         months = ['January', 'February', 'March', 'April', 'May', 'June']
         month = months.index(month) +1 #7ta brob3
-    
+
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
@@ -82,7 +82,7 @@ def load_data(city, month, day):
     if day != 'All':
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
-    
+
     return df
 
 
@@ -144,7 +144,7 @@ def trip_duration_stats(df):
     print('The total travel time:', total_travel_time/(60*60*24), " Days")
 
     # display mean travel time
-    av_trip_duration =  df['Trip Duration'].mean() 
+    av_trip_duration =  df['Trip Duration'].mean()
     print('The average trip duration: ',av_trip_duration , " Seconds")
 
 
@@ -224,7 +224,7 @@ def main():
         if restart.lower() != 'yes':
             print('\n\nThank you :)')
             break
-            
+
 
 
 if __name__ == "__main__":

@@ -9,6 +9,7 @@ Using Python to explore data related to bike share systems for three major citie
 
 Software Used:
 Python 3, NumPy, and ATOM as a text editor (you can always choose what suites you best)
+Also a terminal application can become handy
 
 
 Files used:
