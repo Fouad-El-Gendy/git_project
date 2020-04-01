@@ -9,12 +9,12 @@ CITY_DATA = { 'Chicago': 'chicago.csv',
 
 def get_filters():
     """
-    Asks user to specify a city, month, and day to analyze.
+    Asks the user to specify a city, month, and a day to analyze.
 
     Returns:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+        (str) city - Name of the city to analyze
+        (str) month - Name of the month to filter by, or "all" to apply no month filter
+        (str) day - Name of the day of week to filter by, or "all" to apply no day filter
     """
     print(' \nHello! Let\'s explore some US bikeshare Data! ')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
@@ -50,7 +50,7 @@ def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
 
-    Args:
+    Arguments:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
@@ -193,8 +193,8 @@ def user_stats(df):
 
 def raw_data(df):
     """
-    Asks user if they want to see 5 lines of raw data.
-    Returns the 5 lines of raw data if user inputs `yes`. Iterate until user response with a `no`
+    Asks user if they want to see 5 lines of raw data or not.
+    Returns the 5 lines of raw data if user inputs `yes`. Iterate until user response is a `no`
 
     """
 
