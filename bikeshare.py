@@ -16,7 +16,7 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('\nHello! Let\'s explore some US bikeshare data!')
+    print(' \nHello! Let\'s explore some US bikeshare Data! ')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input('\nWhich city would you like to filter by? New York City, Chicago or Washington?\n').title()
@@ -29,7 +29,7 @@ def get_filters():
     while True:
         month = input('\nWhich city would you like to filter by? January, February, March, April, May, June or type "all" if you do not to filter by a specific month?\n').title()
         if month not in ('January', 'February', 'March', 'April', 'May', 'June','All'):
-            print('\nWrong Entrance, please Try again!\n')
+            print(' \nWrong Entrance, please Try again!\n ')
         else:
             break
 
@@ -74,7 +74,7 @@ def load_data(city, month, day):
         # use the index of the months list to get the corresponding int
         months = ['January', 'February', 'March', 'April', 'May', 'June']
         month = months.index(month) +1 #7ta brob3
-    
+
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
@@ -82,7 +82,7 @@ def load_data(city, month, day):
     if day != 'All':
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
-    
+
     return df
 
 
@@ -144,7 +144,7 @@ def trip_duration_stats(df):
     print('The total travel time:', total_travel_time/(60*60*24), " Days")
 
     # display mean travel time
-    av_trip_duration =  df['Trip Duration'].mean() 
+    av_trip_duration =  df['Trip Duration'].mean()
     print('The average trip duration: ',av_trip_duration , " Seconds")
 
 
@@ -224,7 +224,7 @@ def main():
         if restart.lower() != 'yes':
             print('\n\nThank you :)')
             break
-            
+
 
 
 if __name__ == "__main__":
