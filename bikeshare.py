@@ -17,7 +17,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('\nHello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get the input from the user for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input('\nWhich city would you like to filter by? New York City, Chicago or Washington?\n').title()
         if city not in  ('New York City' , 'Chicago' , 'Washington'):
@@ -125,8 +125,8 @@ def station_stats(df):
     common_End_Station = df['End Station'].value_counts().idxmax()
     print('The most commonly used end station:', common_End_Station)
 
-    # display most frequent combination of start station and end station trip #------>
-    #combination = df.groupby(['Start Station', 'End Station']).count()
+    # display most frequent combination of start station and end station trip
+    # combination = df.groupby(['Start Station', 'End Station']).count()
     print('\nmost frequent combination of start station and end station trip:', common_Start_Station, " To ", common_End_Station)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
